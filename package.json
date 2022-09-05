@@ -1,0 +1,55 @@
+{
+  "name": "digitalelement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "gulp"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/*.svg",
+    "source/less/**/*.less"
+  ],
+  "engines": {
+    "node": "14.17.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NivaiZ/-.git"
+  },
+  "author": "Ilya Galyatdinov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NivaiZ/-/issues"
+  },
+  "homepage": "https://github.com/NivaiZ/-#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "browser-sync": "^2.27.10",
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-less": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "linthtml-config-htmlacademy": "^1.0.3",
+    "postcss-csso": "^6.0.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-htmlacademy": "^1.1.0"
+  }
+}
