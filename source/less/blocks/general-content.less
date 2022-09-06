@@ -1,0 +1,17 @@
+.general-content {
+  position: relative;
+  font-family: "Galien", "Arial", sans-serif;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: @description-block;
+    opacity: 0.2;
+    z-index: -1;
+    display: block;
+  }
+}
