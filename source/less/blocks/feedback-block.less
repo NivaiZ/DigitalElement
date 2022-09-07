@@ -5,7 +5,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   &::before {
     content: "";
@@ -14,7 +14,7 @@
     position: absolute;
     opacity: 0.4;
     border: 1px solid @white;
-    bottom: 6px;
+    bottom: -68px;
   }
 }
 
@@ -27,7 +27,6 @@
   line-height: 46px;
   letter-spacing: 0.05em;
   color: @white;
-  max-width: 317px;
 }
 
 .feedback-block {
@@ -38,7 +37,7 @@
   &::after {
     content: "";
     display: block;
-    width: 100%;
+    width: 94%;
     height: 100vh;
     position: absolute;
     border-radius: 0 200px 0 0;
@@ -69,4 +68,11 @@
   padding-bottom: 15px;
   background-color: @blue--picton;
   border-radius: 10px;
+  margin-top: 60px;
+}
+
+.feedback-block__list {
+  margin-top: 60px;
+  padding-left: 108px;
+  padding-right: 180px;
 }
