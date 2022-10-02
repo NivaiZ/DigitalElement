@@ -213,14 +213,13 @@
       <div class="modal-content__form">
         <h2 class="modal-content__title">SEND US MESSAGE</h2>
         <form class="modal-content__send" action="#" method="post" novalidate>
-          <button type="reset" aria-label="Close"></button>
-          <label for="modal__name modal__label">Full Name</label>
-          <input type="text" id="modal__name" placeholder="Your Name" autofocus>
-          <label for="modal__email modal__label">Email</label>
-          <input id="modal__email" type="email" placeholder="Your Email">
-          <label for="modal__message">Message</label>
-          <textarea id="modal__message modal__label" placeholder="Your Message"></textarea>
-          <button type="submit" id="modal__submit">SUBMIT</button>
+          <label class="modal__label" for="modal__name">Full Name</label>
+          <input class="modal__placeholder modal__placeholder--padding" type="text" id="modal__name" placeholder="Your Name" autofocus>
+          <label class="modal__label" for="modal__email">Email</label>
+          <input class="modal__placeholder modal__placeholder--padding" id="modal__email" type="email" placeholder="Your Email">
+          <label class="modal__label" for="modal__message">Message</label>
+          <textarea class="modal__label modal__textarea modal__placeholder" id="modal__message modal__label" placeholder="Your Message"></textarea>
+          <button class="modal__submit--button" type="submit" id="modal__submit">SUBMIT</button>
         </form>
       </div>
       <!-- <div class="modal-content__message modal-content__message--success">
