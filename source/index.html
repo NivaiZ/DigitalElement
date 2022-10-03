@@ -145,7 +145,8 @@
         <ul class="feedback-block__list">
           <li class="feedback-block__item">
             <h2 class="feedback-block__heading">Intersted to woek
-              <br>with our team?</h2>
+              <br>with our team?
+            </h2>
             <p class="feedback-block__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           </li>
@@ -208,35 +209,42 @@
       </div>
     </section>
   </footer>
-  <template id="popup">
-    <section class="modal-content">
-      <div class="modal-content__form">
-        <h2 class="modal-content__title">SEND US MESSAGE</h2>
-        <form class="modal-content__send" action="#" method="post" novalidate>
-          <label class="modal__label" for="modal__name">Full Name</label>
-          <input class="modal__placeholder modal__placeholder--padding" type="text" id="modal__name" placeholder="Your Name" autofocus>
-          <label class="modal__label" for="modal__email">Email</label>
-          <input class="modal__placeholder modal__placeholder--padding" id="modal__email" type="email" placeholder="Your Email" autofocus>
-          <label class="modal__label" for="modal__message">Message</label>
-          <textarea class="modal__label modal__textarea modal__placeholder" id="modal__message modal__label" placeholder="Your Message"></textarea>
-          <button class="modal__submit--button" type="submit" id="modal__submit">SUBMIT</button>
-        </form>
-      </div>
-      <!-- <div class="modal-content__message modal-content__message--success">
+  <section class="modal-content">
+    <div class="modal-content__form">
+      <h2 class="modal-content__title">SEND US MESSAGE</h2>
+      <form class="modal-content__send" action="#" method="post" novalidate>
+        <label class="modal__label" for="modal__name">Full Name</label>
+        <input class="modal__placeholder modal__placeholder--padding _req" type="text" id="modal__name"
+          placeholder="Your Name" autofocus>
+        <label class="modal__label" for="modal__email">Email</label>
+        <input class="modal__placeholder modal__placeholder--padding _req" id="modal__email" type="email"
+          placeholder="Your Email" autofocus>
+        <label class="modal__label" for="modal__message">Message</label>
+        <textarea class="modal__label modal__textarea modal__placeholder _req" id="modal__message modal__label"
+          placeholder="Your Message"></textarea>
+        <button class="modal__submit--button" type="submit" id="modal__submit">SUBMIT</button>
+      </form>
+    </div>
+    <template id="success">
+      <div class="modal-content__message modal-content__message--success">
         <h2 class="visually_hidden">Message sent</h2>
         <img src="./img/ok.svg" alt="Logo" width="128" height="128">
         <p class="modal-content__text">Your message has been sent to us.</p>
         <button type="button" class="message__btn button button_hover">Close</button>
       </div>
+    </template>
+
+    <template id="error">
       <div class="modal__content message message--error">
         <button type="button" class="message__close" aria-label="Close"></button>
         <h2 class="visually_hidden">Message not delivered</h2>
         <img src="./img/error.svg" alt="Logo" width="128" height="128">
         <p class="message__text">A send error has occurred.</p>
         <button type="button" class="message__btn button button_hover">Try again</button>
-      </div> -->
-    </section>
-  </template>
+      </div>
+
+    </template>
+  </section>
   <script src="js/index.js" type="module"></script>
 </body>
 
