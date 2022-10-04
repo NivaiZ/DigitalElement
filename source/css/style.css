@@ -929,5 +929,13 @@ html {
   padding-bottom: 26px;
   margin-bottom: 32px;
 }
+.modal-content__wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.just-validate-error-label {
+  position: relative;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -212,16 +212,22 @@
   <section class="modal-content">
     <div class="modal-content__form">
       <h2 class="modal-content__title">SEND US MESSAGE</h2>
-      <form class="modal-content__send" action="#" method="post" novalidate>
-        <label class="modal__label" for="modal__name">Full Name</label>
-        <input class="modal__placeholder modal__placeholder--padding _req" type="text" id="modal__name"
-          placeholder="Your Name" autofocus>
-        <label class="modal__label" for="modal__email">Email</label>
-        <input class="modal__placeholder modal__placeholder--padding _req" id="modal__email" type="email"
-          placeholder="Your Email" autofocus>
-        <label class="modal__label" for="modal__message">Message</label>
-        <textarea class="modal__label modal__textarea modal__placeholder _req" id="modal__message modal__label"
-          placeholder="Your Message"></textarea>
+      <form class="modal-content__send" action="#" method="post" id="modal__form">
+        <div class="modal-content__wrapper">
+          <label class="modal__label" for="modal__name">Full Name</label>
+          <input class="modal__placeholder modal__placeholder--padding" type="text" id="modal__name"
+            placeholder="Your Name" required>
+        </div>
+        <div class="modal-content__wrapper">
+          <label class="modal__label" for="modal__email">Email</label>
+          <input class="modal__placeholder modal__placeholder--padding" id="modal__email" type="email"
+            placeholder="Your Email" required>
+        </div>
+        <div class="modal-content__wrapper">
+          <label class="modal__label" for="modal__message">Message</label>
+          <textarea class="modal__label modal__textarea modal__placeholder" id="modal__message modal__label"
+            placeholder="Your Message"></textarea>
+        </div>
         <button class="modal__submit--button" type="submit" id="modal__submit">SUBMIT</button>
       </form>
     </div>
@@ -246,6 +252,7 @@
     </template>
   </section>
   <script src="js/index.js" type="module"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 </body>
 
 </html>

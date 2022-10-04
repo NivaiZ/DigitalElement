@@ -1,26 +1,45 @@
-const getFormSendFunction = () => {
-  const getForm = document.querySelector('.modal-content__send');
-  getForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const formData = new FormData(getForm);
-    fetch('http://httpbin.org/post', {
-        method: "POST",
-        body: formData
-      }).then(res => res.json())
-      .then(formData => console.log(formData))
-      .catch(error => console.log(error))
-  })
-}
+const addForm = document.querySelector('.modal-content__send');
+const addFormName = addForm.querySelector('#modal__name');
+const addFormEmail = addForm.querySelector('#modal__email');
 
-const formValidationFunction = () => {
-  const error = 0;
-  const formReq = document.querySelectorAll('._req');
-  for (let index = 0; index < formReq.length; index++) {
-    const input = formReq[index]
-  }
-}
-const checkEmailFinction = (input) => {
-  const reg = /[-.\w]+@([\w-]+\.)+[\w-]+/g;
-}
-getFormSendFunction();
-formValidationFunction();
+addForm.addEventListener('submit', (evt)=> {
+  evt.preventDefault();
+  const formData = new FormData(evt.target);
+  sendData(onShowPopupSuccess, onShowPopupError, formData);
+})
+
+const sendData = (onSucces, onFail, body) => {
+  fetch('https://24.javascript.pages.academy/keksobooking',
+    {
+      method: 'POST',
+      body,
+    })
+    .then((response) => {
+      if (response.ok) {
+        onSucces();
+      } else {
+        onFail();
+      }
+    })
+    .catch(onFail);
+};
+
+const onShowPopupSuccess = () => {
+  const successFormTemplate = document.querySelector('#success')
+    .content
+    .querySelector('.success');
+  const successMessage = successFormTemplate.cloneNode(true);
+  document.body.appendChild(successMessage);
+  onClickAndKeydown(successMessage);
+};
+
+const onShowPopupError = () => {
+  const errorFormTemplate = document.querySelector('#error')
+    .content
+    .querySelector('.error');
+  const errorMessage = errorFormTemplate.cloneNode(true);
+  document.body.appendChild(errorMessage);
+  onClickAndKeydown(errorMessage);
+};
+
+validEmailFunction();
