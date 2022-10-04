@@ -212,7 +212,7 @@
   <section class="modal-content">
     <div class="modal-content__form">
       <h2 class="modal-content__title">SEND US MESSAGE</h2>
-      <form class="modal-content__send" action="#" method="post" id="modal__form">
+      <form class="modal-content__send" action="http://httpbin.org/post" method="post" id="modal__form">
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__name">Full Name</label>
           <input class="modal__placeholder modal__placeholder--padding" type="text" id="modal__name"
@@ -233,26 +233,25 @@
     </div>
     <template id="success">
       <div class="modal-content__message modal-content__message--success">
-        <h2 class="visually_hidden">Message sent</h2>
-        <img src="./img/ok.svg" alt="Logo" width="128" height="128">
+        <h2 class="visually__hidden">Message sent</h2>
+        <img src="../img/true.png" alt="Logo" width="128" height="128">
         <p class="modal-content__text">Your message has been sent to us.</p>
-        <button type="button" class="message__btn button button_hover">Close</button>
+        <button type="button" class="modal-content__message--button">Close</button>
       </div>
     </template>
 
     <template id="error">
-      <div class="modal__content message message--error">
+      <div class="modal-content__message modal-content__message--error">
         <button type="button" class="message__close" aria-label="Close"></button>
-        <h2 class="visually_hidden">Message not delivered</h2>
-        <img src="./img/error.svg" alt="Logo" width="128" height="128">
+        <h2 class="visually__hidden">Message not delivered</h2>
+        <img src="../img/false.png" alt="Logo" width="128" height="128">
         <p class="message__text">A send error has occurred.</p>
-        <button type="button" class="message__btn button button_hover">Try again</button>
+        <button type="button" class="modal-content__message--button">Try again</button>
       </div>
-
     </template>
+
   </section>
   <script src="js/index.js" type="module"></script>
-  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 </body>
 
 </html>
