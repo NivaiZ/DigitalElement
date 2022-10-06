@@ -12,6 +12,7 @@
   box-shadow: 5px 10px 50px rgb(16 112 177 / 20%);
   opacity: 0;
   pointer-events: none;
+  top: 1000px;
 }
 
 .modal-content__body--noscroll {
@@ -19,7 +20,17 @@
 }
 
 .modal-content {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  transition: background-color 0.3s ease-in-out, visibility 0s 0.75s;
 }
 
 .modal-content__open {
@@ -33,14 +44,25 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.5);
-  animation: bounce 0.5s;
+  font-family: "Gilroy", "Arial", sans-serif;
 }
 
 .modal-content__form--open {
   opacity: 1;
   pointer-events: all;
-  transition: 15s ease;
+  transition: top 0.5s ease-in-out;
+  animation: fadeIn 0.5s;
   box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
+  position: relative;
+}
+
+.modal-content.modal-content__open {
+  visibility: visible;
+  transition: none;
+}
+
+.modal-content__body--noscroll .modal-content__form--open {
+  top: 0;
 }
 
 .modal-content__title {
@@ -85,6 +107,10 @@
   padding-right: 50px;
 }
 
+.modal-content__focus:valid {
+  border-color: @blue;
+}
+
 .modal__submit--button {
   box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
   border-radius: 10px;
@@ -96,6 +122,16 @@
   max-width: 428px;
   padding-top: 27px;
   padding-bottom: 27px;
+  transition: 0.5s ease;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .modal__textarea {
@@ -110,6 +146,46 @@
   padding-bottom: 26px;
   margin-bottom: 32px;
 }
+
+.modal-content__block {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-content__button {
+  width: fit-content;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: @blue;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+    margin-bottom: -2px;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
 
 .modal-content__wrapper {
   display: flex;

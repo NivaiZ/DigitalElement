@@ -1,8 +1,7 @@
-const addForm = document.querySelector('.modal-content__send');
-const addFormName = addForm.querySelector('#modal__name');
-const addFormEmail = addForm.querySelector('#modal__email');
-
 const onEscKey = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+const addForm = document.querySelector('.modal-content__send');
+const addFormEmail = addForm.querySelector('#modal__email');
 
 const onClickAndKeydown = (messageType) => {
   messageType.addEventListener('click', () => {
@@ -16,27 +15,6 @@ const onClickAndKeydown = (messageType) => {
   });
 };
 
-addForm.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-  const formData = new FormData(evt.target);
-  sendData(onShowPopupSuccess, onShowPopupError, formData);
-})
-
-const sendData = (onSucces, onFail, body) => {
-  fetch('http://httpbin.org/post',
-    {
-      method: 'POST',
-      body,
-    })
-    .then((response) => {
-      if (response.ok) {
-        onSucces();
-      } else {
-        onFail();
-      }
-    })
-    .catch(onFail);
-};
 
 const onShowPopupSuccess = () => {
   const successFormTemplate = document.querySelector('#success')
@@ -55,3 +33,61 @@ const onShowPopupError = () => {
   document.body.appendChild(errorMessage);
   onClickAndKeydown(errorMessage);
 };
+
+function onSuccess(formNode) {
+  onShowPopupSuccess();
+  formNode.classList.toggle('a');
+}
+
+function onError() {
+  onShowPopupError();
+}
+
+function serializeForm(formNode) {
+  const data = new FormData(formNode)
+  return data
+}
+
+function checkValidity(event) {
+  const formNode = event.target.form
+  const isValid = formNode.checkValidity()
+  onInput();
+  formNode.querySelector('.modal__submit--button').disabled = !isValid
+}
+
+async function sendData(data) {
+  return await fetch('http://httpbin.org/post', {
+    method: 'POST',
+    headers: { 'Content-Type': 'multipart/form-data' },
+    body: data,
+  })
+}
+
+async function handleFormSubmit(event) {
+  event.preventDefault()
+  const data = serializeForm(event.target)
+
+  const { status, error } = await sendData(data)
+
+  if (status === 200) onSuccess(event.target)
+  else onError(error)
+}
+
+
+const isEmailValid = (value) => {
+  return EMAIL_REGEXP.test(value);
+}
+
+const onInput = () => {
+  if (isEmailValid(addFormEmail.value)) {
+    addFormEmail.style.borderColor = 'green';
+  } else {
+    addFormEmail.style.borderColor = 'red';
+  }
+}
+
+const applicantForm = document.getElementById('modal__form')
+applicantForm.addEventListener('submit', handleFormSubmit)
+applicantForm.addEventListener('input', checkValidity)
+
+applicantForm.querySelector('.modal__submit--button').disabled = true

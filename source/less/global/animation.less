@@ -1,18 +1,37 @@
-@keyframes bounce {
+@keyframes fadeIn {
   0% {
-    transform: translate(-50%, -20px);
-    transition: 5s ease;
-  }
-
-  70% {
-    transform: translate(-50%, 30px);
-  }
-
-  90% {
-    transform: translate(-50%, -10px);
+    opacity: 0;
   }
 
   100% {
-    transform: translate(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
   }
 }
