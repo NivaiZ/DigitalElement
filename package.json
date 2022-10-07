@@ -8,7 +8,6 @@
     "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
     "build": "gulp build",
     "start": "gulp start",
-    "webp": "gulp webp",
     "sprite": "gulp sprite",
     "img": "gulp images && gulp copy",
     "prod": "gulp prod"

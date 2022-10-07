@@ -14,7 +14,7 @@ const include = require("posthtml-include");
 const del = require("del");
 const concat = require("gulp-concat");
 const babel = require("gulp-babel");
-var uglify = require("gulp-uglify");
+const uglify = require("gulp-uglify");
 const terser = require("gulp-terser");
 const less = require("gulp-less");
 
@@ -60,8 +60,9 @@ gulp.task("css", function () {
 });
 
 gulp.task("server", function () {
+
   server.init({
-    server: "build/",
+    server: "source/",
     notify: false,
     open: true,
     cors: true,
@@ -129,7 +130,7 @@ gulp.task("copy", function () {
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
     "source//*.ico",
-    "source/js/async-polyfills/*.js"
+    "source/js/*.js"
   ], {
     base: "source"
   })
