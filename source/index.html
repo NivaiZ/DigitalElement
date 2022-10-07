@@ -44,7 +44,7 @@
           <a class="description-block__link" href="#">See Our Project</a>
         </li>
         <li class="description-block__list">
-          <img alt="pic" src="../img/illustration.png" width="687" height="612">
+          <img class="description-block__img" alt="pic" src="../img/illustration.png" width="687" height="612">
         </li>
       </ul>
     </section>
@@ -222,12 +222,12 @@
   </div>
 
   <section class="modal-content">
-    <div class="modal-content__form">
-      <div class="modal-content__block">
-        <h2 class="modal-content__title">SEND US MESSAGE</h2>
-        <button class="modal-content__button" type="button" aria-label="Close"></button>
-      </div>
-      <form class="modal-content__send" action="http://httpbin.org/post" method="post" id="modal__form">
+    <form class="modal-content__send" action="http://httpbin.org/post" method="post" id="modal__form">
+      <div class="modal-content__form">
+        <div class="modal-content__block">
+          <h2 class="modal-content__title">SEND US MESSAGE</h2>
+          <button class="modal-content__button" type="button" aria-label="Close"></button>
+        </div>
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__name">Full Name</label>
           <input class="modal__placeholder modal__placeholder--padding" type="text" id="modal__name"
@@ -235,17 +235,19 @@
         </div>
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__email">Email</label>
-          <input class="modal__placeholder modal__placeholder--padding modal-content__focus" id="modal__email" type="email"
-            placeholder="Your Email" name="email" required>
+          <input class="modal__placeholder modal__placeholder--padding modal-content__focus" id="modal__email"
+            type="email" placeholder="Your Email" name="email" required>
         </div>
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__message">Message</label>
           <textarea class="modal__label modal__textarea modal__placeholder" id="modal__message modal__label"
             placeholder="Your Message"></textarea>
         </div>
-        <button class="modal__submit--button" type="submit" id="modal__submit" aria-label="submit" disabled value="Send form">SUBMIT</button>
-      </form>
+        <button class="modal__submit--button" type="submit" id="modal__submit" aria-label="submit" disabled
+          value="Send form">SUBMIT</button>
+    </form>
     </div>
+
     <template id="success">
       <div class="modal-content__message modal-content__message--success">
         <h2 class="visually__hidden">Message sent</h2>

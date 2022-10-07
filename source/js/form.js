@@ -36,7 +36,6 @@ const onShowPopupError = () => {
 
 function onSuccess(formNode) {
   onShowPopupSuccess();
-  formNode.classList.toggle('a');
 }
 
 function onError() {

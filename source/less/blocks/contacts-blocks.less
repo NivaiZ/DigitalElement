@@ -3,11 +3,20 @@
   flex-direction: column;
   list-style: none;
   padding-right: 77px;
+
+  @media (max-width: 1140px) {
+    padding-right: 15px;
+  }
 }
 
 .contacts-block__list {
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 1140px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .contacts-block__inner {
@@ -15,6 +24,12 @@
   align-items: center;
   padding-top: 93px;
   padding-left: 69px;
+  margin-bottom: 64px;
+
+  @media (max-width: 1140px) {
+    flex-direction: column;
+    padding-left: 15px;
+  }
 }
 
 .contacts-block__heading {
@@ -44,11 +59,11 @@
   letter-spacing: 0.05em;
   color: @white;
   opacity: 0.4;
-  margin-left: 45px;
+  margin-left: 110px;
   margin-bottom: 0;
 }
 
-.contacts-block__inner > .social-block {
+.contacts-block__inner>.social-block {
   margin-right: 106px;
 }
 

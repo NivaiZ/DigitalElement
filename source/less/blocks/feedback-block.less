@@ -2,7 +2,6 @@
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -10,11 +9,16 @@
   &::before {
     content: "";
     display: block;
-    width: 100%;
+    width: 70%;
+    left: 0;
     position: absolute;
     opacity: 0.4;
     border: 1px solid @white;
     bottom: -68px;
+  }
+
+  @media (max-width: 1140px) {
+    flex-direction: column;
   }
 }
 
@@ -94,4 +98,9 @@
   margin-top: 60px;
   padding-left: 108px;
   padding-right: 180px;
+
+  @media (max-width: 1140px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }

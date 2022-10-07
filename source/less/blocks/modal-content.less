@@ -13,6 +13,12 @@
   opacity: 0;
   pointer-events: none;
   top: 1000px;
+
+  @media (max-width: 600px) {
+    max-width: unset;
+    width: unset;
+    padding: 15px;
+  }
 }
 
 .modal-content__body--noscroll {
@@ -105,9 +111,15 @@
   padding-left: 50px;
   max-width: 326px;
   padding-right: 50px;
+
+  @media (max-width: 600px) {
+    width: unset;
+    max-width: unset;
+  }
 }
 
-.modal-content__focus:valid {
+.modal__placeholder:not(:focus):invalid {
+  animation: shake 0.6s ease-in-out;
   border-color: @blue;
 }
 
@@ -131,6 +143,11 @@
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  @media (max-width: 1140px) {
+    max-width: unset;
+    width: unset;
   }
 }
 
@@ -162,6 +179,10 @@
   position: absolute;
   right: 30px;
   top: 30px;
+
+  @media (max-width: 1140px) {
+    right: 51px;
+  }
 
   &::before,
   &::after {
