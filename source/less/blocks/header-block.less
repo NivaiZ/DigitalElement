@@ -111,26 +111,29 @@
   }
 }
 
-.header-block__burger--open .header-block__toggle::before,
-.header-block__burger--open .header-block__toggle::after {
-  transition: top 0.3s, transform 0.3s 0.5s;
-  width: 28px;
-  top: 0;
-  left: -5px;
-}
+.header-block__burger--open .header-block__toggle {
 
-.header-block__burger--open .header-block__toggle::before {
-  transform: rotate3d(0, 0, 1, 45deg);
-  background-color: @white;
-}
-
-.header-block__burger--open .header-block__toggle::after {
-  transform: rotate3d(0, 0, 1, -45deg);
-  background-color: @white;
+  &::after,
+  &::before {
+    transition: top 0.3s, transform 0.3s 0.5s;
+    width: 28px;
+    top: 0;
+    left: -5px;
+  }
 }
 
 .header-block__burger--open .header-block__toggle {
   background: 0 0;
   transition: background 0.1s 0.1s;
   z-index: 6;
+
+  &::before {
+    transform: rotate3d(0, 0, 1, 45deg);
+    background-color: @white;
+  }
+
+  &::after {
+    transform: rotate3d(0, 0, 1, -45deg);
+    background-color: @white;
+  }
 }
