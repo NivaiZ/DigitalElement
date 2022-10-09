@@ -55,7 +55,7 @@ function checkValidity(event) {
 }
 
 async function sendData(data) {
-  return await fetch('http://httpbin.org/post', {
+  return await fetch('https://httpbin.org/post', {
     method: 'POST',
     headers: { 'Content-Type': 'multipart/form-data' },
     body: data,

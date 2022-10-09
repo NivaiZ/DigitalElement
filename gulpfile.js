@@ -6,6 +6,7 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const server = require("browser-sync").create();
 const csso = require("gulp-csso");
+const htmlmin = require("gulp-htmlmin");
 const rename = require("gulp-rename");
 const imagemin = require("gulp-imagemin");
 const svgstore = require("gulp-svgstore")
@@ -13,14 +14,12 @@ const posthtml = require("gulp-posthtml");
 const include = require("posthtml-include");
 const del = require("del");
 const concat = require("gulp-concat");
-const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
 const terser = require("gulp-terser");
 const less = require("gulp-less");
 
 gulp.task("scripts:index", function () {
-  return gulp.src(["source/js/*.js"])
-    .pipe(babel())
+  return gulp.src(["source/js/module/*.js", "source/js/*.js"])
     .pipe(plumber())
     .pipe(concat("index.js"))
     .pipe(gulp.dest("build/js"))
@@ -28,8 +27,7 @@ gulp.task("scripts:index", function () {
 });
 
 gulp.task("scripts-min:index", function () {
-  return gulp.src(["source/js/*.js"])
-    .pipe(babel())
+  return gulp.src(["source/js/module/*.js", "source/js/*.js"])
     .pipe(terser())
     .pipe(plumber())
     .pipe(concat("index.js"))
@@ -122,6 +120,7 @@ gulp.task("html", function () {
     .pipe(posthtml([
       include()
     ]))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
 });
 

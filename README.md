@@ -1,5 +1,5 @@
 Digital Element
-[Демо проекта](https://nivaiz.github.io/digitalelement/build/)
+[Демо проекта](https://nivaiz.github.io/DigitalElement/build/index.html)
 
 Вёрстка: [Илья Галятдинов](https://github.com/NivaiZ/)
 

@@ -647,6 +647,12 @@ html {
   display: grid;
   list-style: none;
 }
+@media (max-width: 1140px) {
+  .advantages-block__item {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 .advantages-block__item:nth-child(3) {
   grid-column: 2/-1;
 }
@@ -672,7 +678,7 @@ html {
 @media (max-width: 1140px) {
   .advantages-block__item:nth-of-type(2) {
     margin-bottom: 15px;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 }
 .advantages-block__list {
@@ -697,6 +703,11 @@ html {
   max-width: 1140px;
   margin: 0 auto;
   padding: 159px 0 95px;
+}
+@media (max-width: 1040px) {
+  .advantages-block__inner {
+    padding: 25px 0 25px;
+  }
 }
 .advantages-block {
   font-family: "Gilroy", "Arial", sans-serif;
@@ -757,6 +768,11 @@ html {
   border-radius: 200px 0 0 0;
   background-color: #5A98D0;
   top: 165px;
+}
+@media (max-width: 1040px) {
+  .clients-block::after {
+    top: 55px;
+  }
 }
 .clients-block__item {
   list-style: none;
@@ -919,6 +935,11 @@ html {
   position: relative;
   margin-top: 113px;
 }
+@media (max-width: 1140px) {
+  .feedback-block {
+    margin-top: 54px;
+  }
+}
 .feedback-block__box--blue::after {
   content: "";
   display: block;
@@ -948,6 +969,12 @@ html {
   color: #FFFFFF;
   opacity: 0.6;
   max-width: 460px;
+}
+@media (max-width: 1140px) {
+  .feedback-block__text {
+    max-width: unset;
+    padding-left: 15px;
+  }
 }
 .feedback-block__link {
   font-size: 16px;
@@ -1038,6 +1065,11 @@ html {
   opacity: 0.4;
   margin-left: 110px;
   margin-bottom: 0;
+}
+@media (max-width: 1040px) {
+  .contacts-block__copyright {
+    margin-left: 55px;
+  }
 }
 .contacts-block__inner > .social-block {
   margin-right: 106px;
@@ -1160,6 +1192,7 @@ html {
 .modal-content.modal-content__open {
   visibility: visible;
   transition: none;
+  overflow-y: auto;
 }
 .modal-content__body--noscroll .modal-content__form--open {
   top: 0;
@@ -1274,7 +1307,7 @@ html {
 }
 @media (max-width: 1140px) {
   .modal-content__button {
-    right: 51px;
+    right: 19px;
   }
 }
 .modal-content__button::before,

@@ -37,6 +37,10 @@
   font-family: "Gilroy", "Arial", sans-serif;
   position: relative;
   margin-top: 113px;
+
+  @media (max-width: 1140px) {
+    margin-top: 54px;
+  }
 }
 
 .feedback-block__box--blue {
@@ -72,6 +76,11 @@
   color: @white;
   opacity: 0.6;
   max-width: 460px;
+
+  @media (max-width: 1140px) {
+    max-width: unset;
+    padding-left: 15px;
+  }
 }
 
 .feedback-block__link {

@@ -18,6 +18,11 @@
   display: grid;
   list-style: none;
 
+  @media (max-width: 1140px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   &:nth-child(3) {
     grid-column: 2/-1;
 
@@ -39,7 +44,7 @@
   &:nth-of-type(2) {
     @media (max-width: 1140px) {
       margin-bottom: 15px;
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     margin-bottom: 102px;
@@ -69,6 +74,10 @@
   max-width: 1140px;
   margin: 0 auto;
   padding: 159px 0 95px;
+
+  @media (max-width: 1040px) {
+    padding: 25px 0 25px;
+  }
 }
 
 .advantages-block {
