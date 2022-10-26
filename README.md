@@ -19,9 +19,13 @@
 ## Скриншот макета и выполненной работы
 
 <details style="display: flex; flex-direction: column">
-<summary>Скриншоты</summary>
+<summary>Макет</summary>
 <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/r8uN/uC2jKWJce" width="100%" height="100%">
 <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/wxh2/YBpEeo5Xj" width="100%" height="100%">
+</details>
+
+<details style="display: flex; flex-direction: column">
+<summary>Выполненная работа</summary>
 <img src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/5dva/XFQziU5jU" width="100%" height="100%">
 </details>
----
+
