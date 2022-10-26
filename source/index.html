@@ -19,7 +19,7 @@
           </svg>
         </li>
         <li class="header-block__item">
-          <button class="header-block__burger" type="button" aria-label="burger-menu">
+          <button class="header-block__burger" type="button" aria-label="burger-menu" tabindex="1">
             <span class="header-block__toggle"></span>
           </button>
         </li>
@@ -196,8 +196,8 @@
 
               <div class="contacts-block">
                 <ul class="contacts-block__list">
+                  <h2 class="contacts-block__heading">About US</h2>
                   <li class="contacts-block__item">
-                    <h2 class="contacts-block__heading">About US</h2>
                     <a class="contacts-block__link" href="#">About</a>
                     <a class="contacts-block__link" href="#">What We Do</a>
                     <a class="contacts-block__link" href="#">Project</a>
@@ -231,22 +231,23 @@
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__name">Full Name</label>
           <input class="modal__placeholder modal__placeholder--padding" type="text" id="modal__name"
-            placeholder="Your Name" name="name" required>
+            placeholder="Your Name" name="name" required minlength="3">
         </div>
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__email">Email</label>
           <input class="modal__placeholder modal__placeholder--padding modal-content__focus" id="modal__email"
-            type="email" placeholder="Your Email" name="email" required>
+            type="email" placeholder="Your Email" name="email" required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
         </div>
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__message">Message</label>
-          <textarea class="modal__label modal__textarea modal__placeholder" id="modal__message modal__label"
+          <textarea class="modal__label modal__textarea modal__placeholder" id="modal__message"
             placeholder="Your Message"></textarea>
         </div>
         <button class="modal__submit--button" type="submit" id="modal__submit" aria-label="submit" disabled
           value="Send form">SUBMIT</button>
+      </div>
     </form>
-    </div>
 
     <template id="success">
       <div class="modal-content__message modal-content__message--success">
@@ -268,7 +269,7 @@
     </template>
 
   </section>
-  <script src="js/index.js"></script>
+  <script src="js/index.js" type="module"></script>
 </body>
 
 </html>

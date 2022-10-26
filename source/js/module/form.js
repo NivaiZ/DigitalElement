@@ -3,6 +3,7 @@ const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((
 const addForm = document.querySelector('.modal-content__send');
 const addFormEmail = addForm.querySelector('#modal__email');
 
+
 const onClickAndKeydown = (messageType) => {
   messageType.addEventListener('click', () => {
     messageType.remove();
@@ -50,7 +51,6 @@ function serializeForm(formNode) {
 function checkValidity(event) {
   const formNode = event.target.form
   const isValid = formNode.checkValidity()
-  onInput();
   formNode.querySelector('.modal__submit--button').disabled = !isValid
 }
 
@@ -75,14 +75,6 @@ async function handleFormSubmit(event) {
 
 const isEmailValid = (value) => {
   return EMAIL_REGEXP.test(value);
-}
-
-const onInput = () => {
-  if (isEmailValid(addFormEmail.value)) {
-    addFormEmail.style.borderColor = 'green';
-  } else {
-    addFormEmail.style.borderColor = 'red';
-  }
 }
 
 const applicantForm = document.getElementById('modal__form')

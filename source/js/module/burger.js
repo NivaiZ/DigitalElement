@@ -1,3 +1,4 @@
+
 const clickBurgerMenuFunction = () => {
   const burgerButton = document.querySelector(".header-block__burger");
   const contentMenu = document.querySelector('.header-block__content');
@@ -7,7 +8,7 @@ const clickBurgerMenuFunction = () => {
     contentMenu.classList.toggle('header-block__content--open');
   })
 
-  window.addEventListener('click', e => {
+  document.addEventListener('click', e => {
     const target = e.target
     if (!target.closest('.header-block__content') && !target.closest('.header-block__burger')) {
       contentMenu.classList.remove('header-block__content--open');
@@ -15,7 +16,7 @@ const clickBurgerMenuFunction = () => {
     }
   })
 
-  window.addEventListener("keydown", (evt) => {
+  document.addEventListener("keydown", (evt) => {
     if (evt.keyCode === 27) {
       if (contentMenu.classList.contains('header-block__content--open')) {
         evt.preventDefault();
