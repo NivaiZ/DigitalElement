@@ -18,17 +18,34 @@
             <use xlink:href="img/sprite.svg#header__logo"></use>
           </svg>
         </li>
+
         <li class="header-block__item">
-          <button class="header-block__burger" type="button" aria-label="burger-menu" tabindex="1">
+          <button class="header-block__burger" type="button" aria-label="burger-menu">
             <span class="header-block__toggle"></span>
           </button>
         </li>
-        <li class="header-block__content visually__hidden">
+
+      </ul>
+
+      <ul class="header-block__content visually__hidden">
+        <li class="header-block__wrapper">
           <a class="header-block__link" href="#">Link1</a>
+        </li>
+
+        <li class="header-block__wrapper">
           <a class="header-block__link" href="#">Link2</a>
+        </li>
+
+        <li class="header-block__wrapper">
           <a class="header-block__link" href="#">Link3</a>
+        </li>
+
+        <li class="header-block__wrapper">
           <a class="header-block__link" href="#">Link4</a>
         </li>
+
+      </ul>
+
       </ul>
     </nav>
   </header>
@@ -43,33 +60,19 @@
             tristique vulputate ultrices ut mauris tellus at. Posuere sollicitudin odio tellus elit.</p>
           <a class="description-block__link" href="#">See Our Project</a>
         </li>
+
         <li class="description-block__list">
           <img class="description-block__img" alt="pic" src="./img/illustration.png" width="687" height="612">
         </li>
+
       </ul>
     </section>
 
     <section class="advantages-block">
       <div class="advantages-block__inner">
-        <h2 class="advantages-block__heading">What we do to help
-          our client grow in
-          digital era,</h2>
+        <h2 class="advantages-block__heading">What we&nbsp;do&nbsp;to&nbsp;help our client grow in digital era,</h2>
         <ul class="advantages-block__list">
-          <li class="advantages-block__item">
-            <div class="advantages-block__wrapper">
-              <img class="advantages-block__img" src="./img/man1.png" alt="man" width="182" height="132">
-              <h3 class="advantages-block__head">Make Your business To Be
-                Better Famous In Internet</h3>
-              <p class="advantages-block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut
-                labore et dolore magna aliqua.</p>
-              <a class="advantages-block__link" href="#">Learn more
-                <svg class="advantages-block__svg" width="16" height="16">
-                  <use xlink:href="img/sprite.svg#advantages__arrow"></use>
-                </svg>
-              </a>
-            </div>
-          </li>
+
           <li class="advantages-block__item">
             <div class="advantages-block__wrapper">
               <img class="advantages-block__img" src="./img/man2.png" alt="man with advantages" width="224"
@@ -79,12 +82,29 @@
               <p class="advantages-block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.</p>
               <a class="advantages-block__link" href="#">Learn more
-                <svg class="advantages-block__svg" width="16" height="16">
+                <svg class="advantages-block__svg" width="24" height="24">
                   <use xlink:href="img/sprite.svg#advantages__arrow"></use>
                 </svg>
               </a>
             </div>
           </li>
+
+          <li class="advantages-block__item">
+            <div class="advantages-block__wrapper">
+              <img class="advantages-block__img" src="./img/man1.png" alt="man" width="182" height="132">
+              <h3 class="advantages-block__head">Make Your business To Be
+                Better Famous In Internet</h3>
+              <p class="advantages-block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut
+                labore et dolore magna aliqua.</p>
+              <a class="advantages-block__link" href="#">Learn more
+                <svg class="advantages-block__svg" width="24" height="24">
+                  <use xlink:href="img/sprite.svg#advantages__arrow"></use>
+                </svg>
+              </a>
+            </div>
+          </li>
+
           <li class="advantages-block__item">
             <div class="advantages-block__wrapper">
               <img class="advantages-block__img" src="./img/girl.png" alt="girl" width="156" height="131">
@@ -93,12 +113,13 @@
               <p class="advantages-block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.</p>
               <a class="advantages-block__link" href="#">Learn more
-                <svg class="advantages-block__svg" width="16" height="16">
+                <svg class="advantages-block__svg" width="24" height="24">
                   <use xlink:href="img/sprite.svg#advantages__arrow"></use>
                 </svg>
               </a>
             </div>
           </li>
+
         </ul>
       </div>
     </section>
@@ -165,54 +186,83 @@
 
         <section class="social-block">
           <div class="social-block__wrapper">
-            <div class="contacts-block__inner">
-              <div class="social-block">
-                <ul class="social-block__list">
-                  <li class="social-block__item">
-                    <a class="social-block__link social-block__name" href="#">
-                      <svg class="social-block__svg" width="48" height="48">
-                        <use xlink:href="img/sprite.svg#footer__logo"></use>
-                      </svg>
-                      <p class="social-block__text">Afrianska</p>
-                    </a>
-                  </li>
-                  <li class="social-block__item">
-                    <div class="social-block__inner">
-                      <a class="social-block__link social-block__web" href="#">Lorem ipsum dolor sit amet,
-                        <br>consectetur
-                        adipisicing elit.
-                        <span class="social-block__number">A.</span>
-                      </a>
-                      <a class="social-block__link" href="tel:+6281273134321">+62-812-7313-4321
-                        <span class="social-block__number">T.</span>
-                      </a>
-                      <a class="social-block__link" href="mailto:hello.afrian@gmail.com">hello.afrian@gmail.com
-                        <span class="social-block__number">T.</span>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            <div class="social-block__inner">
+              <ul class="social-block__list social-block__info">
+                <li class="social-block__item">
+                  <a class="social-block__link social-block__name" href="#">
+                    <svg class="social-block__svg" width="48" height="48">
+                      <use xlink:href="img/sprite.svg#footer__logo"></use>
+                    </svg>
+                    <p class="social-block__text">Afrianska</p>
+                  </a>
+                </li>
 
-              <div class="contacts-block">
-                <div class="contacts-block__list">
-                  <li class="contacts-block__item">
-                    <h2 class="contacts-block__heading">About US</h2>
-                    <a class="contacts-block__link" href="#">About</a>
-                    <a class="contacts-block__link" href="#">What We Do</a>
-                    <a class="contacts-block__link" href="#">Project</a>
-                    <a class="contacts-block__link" href="#">How It Work With Us</a>
-                  </li>
+                <li class="social-block__item">
+                  <a class="social-block__link social-block__web" href="#">Lorem ipsum dolor sit amet,
+                    <br>consectetur
+                    adipisicing elit.
+                    <span class="social-block__number">A.</span>
+                  </a>
+                </li>
 
-                  <li class="contacts-block__item">
-                    <h2 class="contacts-block__heading">Follow US</h2>
-                    <a class="contacts-block__link" href="#">Vkontakte</a>
-                    <a class="contacts-block__link" href="#">Youtube</a>
-                    <a class="contacts-block__link" href="#">Vkontakte</a>
-                    <a class="contacts-block__link" href="#">Vkontakte</a>
-                  </li>
-                </div>
-              </div>
+                <li class="social-block__item">
+                  <a class="social-block__link" href="tel:+6281273134321">+62-812-7313-4321
+                    <span class="social-block__number">T.</span>
+                  </a>
+                </li>
+
+                <li class="social-block__item">
+                  <a class="social-block__link" href="mailto:hello.afrian@gmail.com">hello.afrian@gmail.com
+                    <span class="social-block__number">T.</span>
+                  </a>
+                </li>
+
+              </ul>
+
+              <ul class="contacts-block__list">
+                <li class="contacts-block__item">
+                  <h2 class="contacts-block__heading">About US</h2>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">About</a>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">What We Do</a>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">Project</a>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">How It Work With Us</a>
+                </li>
+              </ul>
+
+              <ul class="contacts-block__list">
+                <li class="contacts-block__item">
+                  <h2 class="contacts-block__heading">Follow US</h2>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">Vkontakte</a>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">Youtube</a>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">Vkontakte</a>
+                </li>
+
+                <li class="contacts-block__item">
+                  <a class="contacts-block__link" href="#">Vkontakte</a>
+                </li>
+              </ul>
+
             </div>
             <p class="contacts-block__copyright"><time datetime="2019">2019 © Afrianska. All rights reserved.</time></p>
           </div>
@@ -236,8 +286,7 @@
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__email">Email</label>
           <input class="modal__placeholder modal__placeholder--padding modal-content__focus" id="modal__email"
-            type="email" placeholder="Your Email" name="email" required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            type="email" placeholder="Your Email" name="email" required>
         </div>
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__message">Message</label>
@@ -269,7 +318,7 @@
     </template>
 
   </section>
-  <script src="js/index.js" type="module"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

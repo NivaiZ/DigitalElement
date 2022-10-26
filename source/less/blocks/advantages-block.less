@@ -5,18 +5,20 @@
   max-width: 360px;
   font-weight: 700;
   color: @blue--light;
-  margin-left: 114px;
+  padding-top: 140px;
 
   @media (max-width: 1140px) {
     margin-left: 15px;
     max-width: unset;
     font-size: 26px;
+    padding-top: 30px;
   }
 }
 
 .advantages-block__item {
-  display: grid;
+  display: flex;
   list-style: none;
+  height: 100%;
 
   @media (max-width: 1140px) {
     padding-left: 15px;
@@ -24,48 +26,40 @@
     padding-top: 15px;
   }
 
-  &:nth-child(3) {
-    grid-column: 2/-1;
+  &:nth-child(1) {
+    margin-top: -257px;
 
     @media (max-width: 1140px) {
-      grid-column: unset;
-    }
-  }
-
-  &:nth-of-type(1) {
-    margin-bottom: -145px;
-    margin-top: 131px;
-
-    @media (max-width: 1140px) {
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-  }
-
-  &:nth-of-type(2) {
-    @media (max-width: 1140px) {
-      margin-bottom: 15px;
       margin-top: 10px;
     }
+  }
 
-    margin-bottom: 102px;
-    margin-top: -160px;
+  &:nth-child(3) {
+    margin-top: -181px;
+
+    @media (max-width: 1140px) {
+      margin-top: 10px;
+    }
   }
 }
 
 .advantages-block__list {
-  display: grid;
-  grid-template-columns: repeat(2, 0.45fr);
+  display: flex;
+  flex-direction: row-reverse;
   column-gap: 94px;
-  padding-left: 175px;
-  max-width: 940px;
-  margin: 0 auto;
+  padding-top: 90px;
+  flex-wrap: wrap;
 
   @media (max-width: 1140px) {
     display: flex;
     flex-direction: column;
     padding-left: 15px;
-    max-width: 940px;
+    padding-top: 30px;
+  }
+
+  @media (min-width: 850px) and (max-width: 1140px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -73,7 +67,7 @@
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 159px 0 95px;
+  padding: 20px 100px 65px;
 
   @media (max-width: 1040px) {
     padding: 25px 0 25px;
@@ -101,7 +95,7 @@
 }
 
 .advantages-block__svg {
-  padding-left: 28px;
+  margin-left: 30px;
 }
 
 .advantages-block__text {
@@ -114,15 +108,20 @@
 }
 
 .advantages-block__wrapper {
-  display: grid;
+  display: flex;
   justify-content: center;
+  flex-direction: column;
   box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
   border-radius: 10px;
-  padding-bottom: 48px;
+  padding: 50px;
 
   @media (max-width: 400px) {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  @media (max-width: 1140px) {
+    padding: 30px;
   }
 }
 
