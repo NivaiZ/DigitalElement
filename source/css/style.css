@@ -887,18 +887,24 @@ html {
   border-right: none;
 }
 @media (max-width: 1140px) {
-  .clients-block__table:nth-child(2) {
+  .clients-block__table:nth-child(5) {
     border-right: none;
   }
 }
 @media (max-width: 1140px) {
   .clients-block__table:nth-child(6) {
-    border-right: none;
+    border-bottom: none;
+  }
+}
+@media (max-width: 1140px) {
+  .clients-block__table:nth-child(7) {
+    border-bottom: none;
   }
 }
 @media (max-width: 1140px) {
   .clients-block__table {
     border-bottom: 1px solid #9cc1e3;
+    border-left: 1px solid #9cc1e3;
   }
 }
 .clients-block__link {
@@ -1010,7 +1016,9 @@ html {
   .feedback-block__text {
     max-width: unset;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 35px;
+    text-overflow: ellipsis;
+    word-break: break-all;
   }
 }
 .feedback-block__link {
@@ -1026,6 +1034,8 @@ html {
   background-color: #5A98D0;
   border-radius: 10px;
   margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
   transition: 0.3s ease;
 }
 .feedback-block__link:hover {
@@ -1181,8 +1191,9 @@ html {
   display: flex;
   width: 100%;
   align-items: center;
+  flex-wrap: nowrap;
 }
-@media (max-width: 1140px) {
+@media (max-width: 650px) {
   .social-block__inner {
     flex-wrap: wrap;
   }
@@ -1246,10 +1257,15 @@ html {
   min-height: 100%;
   top: 0;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.5);
   font-family: "Gilroy", "Arial", sans-serif;
+}
+@media (max-width: 1140px) {
+  .modal-content__open {
+    justify-content: flex-start;
+  }
 }
 .modal-content__form--open {
   opacity: 1;
@@ -1441,19 +1457,18 @@ html {
   left: 50%;
   width: 109px;
   height: 122px;
-  background-image: url("../img/true.png");
   background-position: center;
   background-repeat: no-repeat;
   transform: translateX(-50%);
 }
-.modal-content__message--error ::after {
+.modal-content__message--error ::before {
   content: "";
   position: absolute;
   top: -150px;
   left: 50%;
   width: 109px;
   height: 122px;
-  background-image: url("../img/false.png");
+  background-image: url("./img/false.png");
   background-position: center;
   background-repeat: no-repeat;
   transform: translateX(-50%);
@@ -1472,6 +1487,8 @@ html {
 }
 .modal-content__text {
   margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 26px;
 }
 .page-main {
   display: flex;

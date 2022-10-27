@@ -99,7 +99,7 @@
     border-right: none;
   }
 
-  &:nth-child(2) {
+  &:nth-child(5) {
     @media (max-width: 1140px) {
       border-right: none;
     }
@@ -107,12 +107,19 @@
 
   &:nth-child(6) {
     @media (max-width: 1140px) {
-      border-right: none;
+      border-bottom: none;
+    }
+  }
+
+  &:nth-child(7) {
+    @media (max-width: 1140px) {
+      border-bottom: none;
     }
   }
 
   @media (max-width: 1140px) {
-    border-bottom: 1px solid #9cc1e3;
+    border-bottom: 1px solid @blue--pale;
+    border-left: 1px solid @blue--pale;
   }
 }
 

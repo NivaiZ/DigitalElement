@@ -2,6 +2,7 @@ const onEscKey = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 const addForm = document.querySelector('.modal-content__send');
 const addFormEmail = addForm.querySelector('#modal__email');
+const applicantForm = document.getElementById('modal__form');
 
 
 const onClickAndKeydown = (messageType) => {
@@ -37,6 +38,7 @@ const onShowPopupError = () => {
 
 function onSuccess(formNode) {
   onShowPopupSuccess();
+  console.log(formNode);
 }
 
 function onError() {
@@ -54,22 +56,27 @@ function checkValidity(event) {
   formNode.querySelector('.modal__submit--button').disabled = !isValid
 }
 
-async function sendData(data) {
-  return await fetch('https://httpbin.org/post', {
-    method: 'POST',
-    headers: { 'Content-Type': 'multipart/form-data' },
-    body: data,
-  })
+async function sendData(onSuccess, onFail, data) {
+  return await fetch('https://httpbin.org/post',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'multipart/form-data' },
+      body: data,
+    })
+    .then((response) => {
+      if (response.ok) {
+        onSuccess();
+      } else {
+        onFail();
+      }
+    })
+    .catch(onFail);
 }
 
 async function handleFormSubmit(event) {
   event.preventDefault()
   const data = serializeForm(event.target)
-
-  const { status, error } = await sendData(data)
-
-  if (status === 200) onSuccess(event.target)
-  else onError(error)
+  sendData(onShowPopupSuccess, onShowPopupError, data);
 }
 
 
@@ -77,8 +84,6 @@ const isEmailValid = (value) => {
   return EMAIL_REGEXP.test(value);
 }
 
-const applicantForm = document.getElementById('modal__form')
-applicantForm.addEventListener('submit', handleFormSubmit)
-applicantForm.addEventListener('input', checkValidity)
-
+applicantForm.addEventListener('submit', handleFormSubmit);
+applicantForm.addEventListener('input', checkValidity);
 applicantForm.querySelector('.modal__submit--button').disabled = true

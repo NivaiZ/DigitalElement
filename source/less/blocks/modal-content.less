@@ -258,7 +258,6 @@
     left: 50%;
     width: 109px;
     height: 122px;
-    background-image: url("../img/true.png");
     background-position: center;
     background-repeat: no-repeat;
     transform: translateX(-50%);
@@ -266,14 +265,14 @@
 }
 
 .modal-content__message--error {
-  ::after {
+  ::before {
     content: "";
     position: absolute;
     top: -150px;
     left: 50%;
     width: 109px;
     height: 122px;
-    background-image: url("../img/false.png");
+    background-image: url("./img/false.png");
     background-position: center;
     background-repeat: no-repeat;
     transform: translateX(-50%);
@@ -295,4 +294,6 @@
 
 .modal-content__text {
   margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 26px;
 }

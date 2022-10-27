@@ -291,7 +291,7 @@
         <div class="modal-content__wrapper">
           <label class="modal__label" for="modal__message">Message</label>
           <textarea class="modal__label modal__textarea modal__placeholder" id="modal__message"
-            placeholder="Your Message"></textarea>
+            placeholder="Your Message" name="text"></textarea>
         </div>
         <button class="modal__submit--button" type="submit" id="modal__submit" aria-label="submit" disabled
           value="Send form">SUBMIT</button>
@@ -303,16 +303,15 @@
         <h2 class="visually__hidden">Message sent</h2>
         <img src="./img/true.png" alt="Logo" width="128" height="128">
         <p class="modal-content__text">Your message has been sent to us.</p>
-        <button type="button" class="modal-content__message--button" aria-label="close">Close</button>
+        <button type="button" class="modal-content__message--button" aria-label="Close">Close</button>
       </div>
     </template>
 
     <template id="error">
       <div class="modal-content__message modal-content__message--error">
-        <button type="button" class="message__close" aria-label="Close"></button>
         <h2 class="visually__hidden">Message not delivered</h2>
         <img src="./img/false.png" alt="Logo" width="128" height="128">
-        <p class="message__text">A send error has occurred.</p>
+        <p class="modal-content__text">A send error has occurred.</p>
         <button type="button" class="modal-content__message--button" aria-label="Try again">Try again</button>
       </div>
     </template>
